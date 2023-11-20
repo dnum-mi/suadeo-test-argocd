@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: echoserver-service
-  namespace: echoserver-ns
+  name: suadeoserver-service
+  namespace: suadeo-dev
 spec:
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 5001
+    targetPort: 5000
     protocol: TCP
   selector:
-    app: echoserver-application
+    app: suadeoserver-service
   

@@ -1,29 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: echoserver-deployment
-  namespace: echoserver-ns
+detadata:
+  name: suadeo-deployment
+  namespace: suadeo-dev
 spec:
-  replicas: 8
+  replicas: 1
   selector:
     matchLabels:
-      app: echoserver-application
+      app: suadeoserver
   template:
     metadata:
       labels:
-        app: echoserver-application
+        app: suadeoserver
     spec:
       containers:
-      #- image: opsdockerimage/echoserver:1.10 
-      #- image: nginxdemos/hello:0.3
-      #- image: hashicorp/http-echo
-      #- image: odeo/rootless-nginx
-      #- image: quay.io/powercloud/http-echo
-      #- image: nginxinc/nginx-unprivileged
-      #- image: docker.io/tobicolin/echo-server-rootless:1.0.0
-      - image: quay.io/redhattraining/hello-world-nginx
-      
+      - image: rg.fr-par.scw.cloud/suadeo/suadeoappserver:24.0.0.15773
+        env:
+          - name: ASPNETCORE_URLS
+          value: "http://+:5000"
         imagePullPolicy: Always
-        name: echoserver-application
+        name: suadeoserver
         ports:
-        - containerPort: 8080
+        - containerPort: 5000

@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: echoserver-application
-  namespace: argocd
+  name: suadeo-application
+  namespace: suadeo-dev
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/dnum-mi/gitops-tutorial-1.git
+    repoURL: https://github.com/dnum-mi/suadeo-test-argocd.git
     targetRevision: HEAD
     path: dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: echoserver-ns
+    namespace: suadeo-dev
 
   syncPolicy:
     syncOptions:
