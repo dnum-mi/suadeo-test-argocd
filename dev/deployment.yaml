@@ -22,4 +22,3 @@ spec:
         name: suadeoserver
         ports:
         - containerPort: 5000
-
