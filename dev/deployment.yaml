@@ -17,7 +17,7 @@ spec:
       - image: rg.fr-par.scw.cloud/suadeo/suadeoappserver:24.0.0.15773
         env:
           - name: ASPNETCORE_URLS
-          value: "http://+:5000"
+            value: "http://+:5000"
         imagePullPolicy: Always
         name: suadeoserver
         ports:
